@@ -33,6 +33,9 @@ let PORT = 8080;
 // Charger les routes des produits
 require('./app/routes/Productroute.js')(app);
 
+// Charger les routes des commandes
+require('./app/routes/commandeRoute.js')(app);
+
 // Démarrer le serveur
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);

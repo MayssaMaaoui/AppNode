@@ -13,7 +13,8 @@ exports.create = (req, res) => {
     const product = new Product({
         nom: req.body.nom,
         description: req.body.description,
-        prix: req.body.prix
+        prix: req.body.prix,
+        images: req.body.images || [] // Accepter un tableau d'images, ou un tableau vide par défaut
     });
 
     // Enregistrer le produit dans la base de données
@@ -72,7 +73,8 @@ exports.update = (req, res) => {
     Product.findByIdAndUpdate(req.params.productId, {
         nom: req.body.nom,
         description: req.body.description,
-        prix: req.body.prix
+        prix: req.body.prix,
+        images: req.body.images || [] // Accepter un tableau d'images
     }, { new: true })
         .then(product => {
             if (!product) {

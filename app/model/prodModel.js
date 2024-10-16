@@ -13,6 +13,10 @@ const ProductSchema = mongoose.Schema({
     prix: {
         type: Number,
         required: true // Le prix est obligatoire
+    },
+    images: {
+        type: [String], // Tableau de chaînes de caractères pour stocker les URLs ou les noms des images
+        required: false
     }
 }, {
     timestamps: true // Ajoute des champs de date de création et de mise à jour
